@@ -3,44 +3,49 @@ import { MoveRight } from 'lucide-astro';
 
 const cases = [
   {
-    tag: 'Sales Cloud',
-    title: 'CRM consolidation for a regional real estate firm',
-    problem: 'Agents were tracking leads in spreadsheets and email threads. No pipeline visibility, no forecasting, and deals falling through the cracks.',
-    solution: 'Implemented Sales Cloud with custom lead routing flows, opportunity stages aligned to their sales process, and automated follow-up reminders.',
-    result: 'Pipeline visibility went from zero to real-time. The sales manager now runs weekly reviews in Salesforce instead of chasing down spreadsheets.',
-    metrics: ['100% pipeline visibility', 'Lead response time ↓ 60%', 'Team adopted in week 1'],
+    tag: 'Field Service Lightning · Experience Cloud',
+    industry: 'Gaming & Entertainment',
+    title: 'FSL implementation and portal for a global gaming technology company',
+    problem: 'Field operations were managed manually — technicians had no mobile access to work orders, scheduling was ad hoc, and the client portal didn\'t exist. On top of that, the business needed Salesforce user identities synced to an external CIAM system in real time.',
+    solution: 'Delivered a full Field Service Lightning rollout covering work orders, asset management, slot machine audit flows, and the dispatcher console. Built an Experience Cloud portal for client-facing access. Developed a custom CIAM integration using Queueable Apex and a Scheduler to sync Salesforce user records to the external identity system — with feature flags controlling the sync per environment.',
+    result: 'Field technicians went fully mobile. Dispatchers had real-time job visibility. The CIAM sync ran reliably across dev, staging, and production without manual intervention.',
+    metrics: ['FSL fully deployed', 'Real-time CIAM sync', 'Experience Cloud portal live'],
   },
   {
-    tag: 'Service Cloud',
-    title: 'Support transformation for a growing SaaS company',
-    problem: 'Customer support ran through a shared email inbox. No SLAs, no routing, no reporting — and a frustrated team burning out on manual triage.',
-    solution: 'Deployed Service Cloud with omni-channel case routing, escalation workflows, SLA tracking, and a knowledge base for common issues.',
-    result: 'Ticket resolution time dropped significantly in the first month. The support team had the tooling to finally match their growth.',
-    metrics: ['Resolution time ↓ 40%', 'CSAT scores improved', 'Zero dropped tickets'],
+    tag: 'Integrations · Sales Cloud',
+    industry: 'Logistics & Freight',
+    title: 'Multi-system Salesforce integration connecting to Dynamics 365',
+    problem: 'The business ran Salesforce alongside Microsoft Dynamics 365, with no reliable sync between them. Data was duplicated manually, errors were common, and there was no audit trail for integration failures.',
+    solution: 'Architected a multi-project integration hub using Invocable Apex + Queueable callouts, with each integration behind a Custom Metadata feature flag for safe toggling per environment. Connected Salesforce to D365 via Azure Logic Apps, with full callout logging through a custom ApplicationLogEventManager. Set up a four-tier branching strategy (feature → project → DEV → main) with per-project sandboxes.',
+    result: 'Integrations ran reliably across multiple Salesforce projects within the same org. Feature flags meant new callouts could be deployed and tested without affecting live data flows.',
+    metrics: ['Zero manual data sync', 'Full callout audit trail', 'Multi-project sandbox pipeline'],
   },
   {
-    tag: 'Loyalty Cloud',
-    title: 'Loyalty programme launch for a retail brand',
-    problem: 'The client ran a manual points programme in spreadsheets with no real-time member visibility, inconsistent reward redemptions, and zero analytics.',
-    solution: 'Implemented Salesforce Loyalty Management with tiered membership, points accrual rules, promotional vouchers, and a member-facing Experience Cloud portal.',
-    result: 'The programme went live on schedule. Members could track points in real time and the marketing team finally had engagement data to work with.',
-    metrics: ['Launched on schedule', 'Real-time points tracking', 'Full analytics from day one'],
+    tag: 'Service Cloud · Experience Cloud',
+    industry: 'Legal & Professional Services',
+    title: 'Client intake and case management platform for an immigration law firm',
+    problem: 'The firm\'s intake process was scattered across emails, forms, and spreadsheets. Attorneys had no visibility into consultation history, court dates, or case status — and billing for admin fees was entirely manual.',
+    solution: 'Built a comprehensive intake system using Screen Flows covering document upload, auto-pay, S-Docs generation, pricing and discount logic, and attorney consultation logging. Developed batch Apex classes to automate admin fee charge creation and opportunity record updates at scale. Added court date check automation and immigration consultation recommendation flows.',
+    result: 'New clients could be taken from first contact to intake in a single guided flow. The billing team stopped manually creating charges. Attorneys had full case history at a glance.',
+    metrics: ['End-to-end intake automated', 'Batch billing eliminated manual work', 'Attorney consultation history centralised'],
   },
   {
-    tag: 'Field Service Lightning',
-    title: 'Field workforce management for a facilities company',
-    problem: 'Scheduling was done over phone calls and a whiteboard. Jobs were double-booked, engineers had no mobile access to work orders, and billing was delayed.',
-    solution: 'Rolled out Field Service Lightning with the dispatcher console, work order management, mobile app for field engineers, and integration to their billing system.',
-    result: 'Scheduling conflicts dropped to near zero. Field engineers had everything they needed on their phones — job details, parts, customer history.',
-    metrics: ['Scheduling conflicts ↓ 90%', 'Mobile-first field team', 'Faster billing cycle'],
+    tag: 'Experience Cloud · Integrations',
+    industry: 'Hospitality & Luxury',
+    title: 'Guest management platform for a luxury hospitality group',
+    problem: 'Guest data was fragmented across properties with no unified view, no centralised service layer, and no self-service portal for guests or internal staff.',
+    solution: 'Designed and built a GuestManagementService Apex service layer following strict with-sharing patterns, centralising guest data operations across the org. Built LWC components for internal staff and delivered an Experience Cloud portal for guest-facing interactions.',
+    result: 'Staff across properties had a single source of truth for guest records. The Experience Cloud portal reduced internal support load and gave the brand a digital touchpoint consistent with its luxury positioning.',
+    metrics: ['Unified guest data model', 'LWC-powered staff interface', 'Experience Cloud portal live'],
   },
   {
-    tag: 'Experience Cloud',
-    title: 'Partner portal for a wholesale distributor',
-    problem: 'Partners were emailing the internal team for order updates, pricing, and support — consuming hours of staff time every day.',
-    solution: 'Built an Experience Cloud partner portal with order tracking, custom pricing visibility, case submission, and role-based content access.',
-    result: 'Partner self-service went from 0% to handling 70% of routine enquiries. The internal team reclaimed hours of time per day.',
-    metrics: ['70% queries self-served', 'Partner satisfaction up', 'Internal team hours freed'],
+    tag: 'Service Cloud · LWC',
+    industry: 'Insurance & Financial Services',
+    title: 'Insurance platform modernisation with multi-language support',
+    problem: 'The existing insurance platform had no reusable component library, limited automation, and no support for multiple languages — making it difficult to serve a diverse customer base and scale across markets.',
+    solution: 'Rebuilt key customer-facing and internal processes using Lightning Web Components and Aura components. Implemented Salesforce translations and multi-language support across the platform. Added message channels for cross-component communication and trigger-based automation for core insurance workflows.',
+    result: 'The platform could now serve customers in multiple languages out of the box. The LWC component library reduced development time for new features significantly.',
+    metrics: ['Multi-language platform', 'Reusable LWC library built', 'Trigger automation across workflows'],
   },
 ];
 ---
@@ -60,9 +65,14 @@ const cases = [
         <div class="reveal bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-neutral-700 transition-all duration-300">
           <div class="flex flex-col lg:flex-row lg:gap-12">
             <div class="lg:w-2/3">
-              <span class="inline-block bg-brand-900/50 border border-brand-500/30 text-brand-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                {c.tag}
-              </span>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="inline-block bg-brand-900/50 border border-brand-500/30 text-brand-400 text-xs font-semibold px-3 py-1 rounded-full">
+                  {c.tag}
+                </span>
+                <span class="inline-block bg-neutral-800 text-slate-400 text-xs font-semibold px-3 py-1 rounded-full">
+                  {c.industry}
+                </span>
+              </div>
               <h3 class="text-2xl font-bold text-white mb-6">{c.title}</h3>
 
               <div class="space-y-4">
