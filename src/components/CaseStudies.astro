@@ -5,26 +5,42 @@ const cases = [
   {
     tag: 'Sales Cloud',
     title: 'CRM consolidation for a regional real estate firm',
-    problem: 'Agents were tracking leads in spreadsheets and email threads. No visibility into pipeline, deals falling through the cracks.',
+    problem: 'Agents were tracking leads in spreadsheets and email threads. No pipeline visibility, no forecasting, and deals falling through the cracks.',
     solution: 'Implemented Sales Cloud with custom lead routing flows, opportunity stages aligned to their sales process, and automated follow-up reminders.',
     result: 'Pipeline visibility went from zero to real-time. The sales manager now runs weekly reviews in Salesforce instead of chasing down spreadsheets.',
     metrics: ['100% pipeline visibility', 'Lead response time ↓ 60%', 'Team adopted in week 1'],
   },
   {
     tag: 'Service Cloud',
-    title: 'Support ticket system for a growing SaaS company',
-    problem: 'Customer support was handled through a shared email inbox. No SLAs, no routing, no reporting — and a frustrated team.',
-    solution: 'Deployed Service Cloud with case auto-assignment rules, escalation workflows, and a knowledge base for common issues.',
-    result: 'Ticket resolution time dropped in the first month. The support team finally had the tooling to match their growth.',
-    metrics: ['Resolution time ↓ 40%', 'CSAT improved significantly', 'Zero dropped tickets'],
+    title: 'Support transformation for a growing SaaS company',
+    problem: 'Customer support ran through a shared email inbox. No SLAs, no routing, no reporting — and a frustrated team burning out on manual triage.',
+    solution: 'Deployed Service Cloud with omni-channel case routing, escalation workflows, SLA tracking, and a knowledge base for common issues.',
+    result: 'Ticket resolution time dropped significantly in the first month. The support team had the tooling to finally match their growth.',
+    metrics: ['Resolution time ↓ 40%', 'CSAT scores improved', 'Zero dropped tickets'],
   },
   {
-    tag: 'Data Migration',
-    title: 'Legacy CRM to Salesforce migration for a consulting firm',
-    problem: '5 years of client data in an aging CRM with duplicates, inconsistent formatting, and no clear ownership model.',
-    solution: 'Audited and cleaned 8,000+ records, designed a new data model, and executed a phased migration with zero business disruption.',
-    result: 'Clean, deduplicated Salesforce org from day one. The team trusted the data — which meant they actually used the system.',
-    metrics: ['8,000+ records migrated', 'Duplicate rate < 2%', 'Zero downtime cutover'],
+    tag: 'Loyalty Cloud',
+    title: 'Loyalty programme launch for a retail brand',
+    problem: 'The client ran a manual points programme in spreadsheets with no real-time member visibility, inconsistent reward redemptions, and zero analytics.',
+    solution: 'Implemented Salesforce Loyalty Management with tiered membership, points accrual rules, promotional vouchers, and a member-facing Experience Cloud portal.',
+    result: 'The programme went live on schedule. Members could track points in real time and the marketing team finally had engagement data to work with.',
+    metrics: ['Launched on schedule', 'Real-time points tracking', 'Full analytics from day one'],
+  },
+  {
+    tag: 'Field Service Lightning',
+    title: 'Field workforce management for a facilities company',
+    problem: 'Scheduling was done over phone calls and a whiteboard. Jobs were double-booked, engineers had no mobile access to work orders, and billing was delayed.',
+    solution: 'Rolled out Field Service Lightning with the dispatcher console, work order management, mobile app for field engineers, and integration to their billing system.',
+    result: 'Scheduling conflicts dropped to near zero. Field engineers had everything they needed on their phones — job details, parts, customer history.',
+    metrics: ['Scheduling conflicts ↓ 90%', 'Mobile-first field team', 'Faster billing cycle'],
+  },
+  {
+    tag: 'Experience Cloud',
+    title: 'Partner portal for a wholesale distributor',
+    problem: 'Partners were emailing the internal team for order updates, pricing, and support — consuming hours of staff time every day.',
+    solution: 'Built an Experience Cloud partner portal with order tracking, custom pricing visibility, case submission, and role-based content access.',
+    result: 'Partner self-service went from 0% to handling 70% of routine enquiries. The internal team reclaimed hours of time per day.',
+    metrics: ['70% queries self-served', 'Partner satisfaction up', 'Internal team hours freed'],
   },
 ];
 ---
@@ -40,7 +56,7 @@ const cases = [
     </div>
 
     <div class="space-y-6">
-      {cases.map((c, i) => (
+      {cases.map((c) => (
         <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-neutral-700 transition-all duration-300">
           <div class="flex flex-col lg:flex-row lg:gap-12">
             <div class="lg:w-2/3">

@@ -1,36 +1,42 @@
 ---
-import { Zap, Wrench, Shield, BookOpen, ArrowLeftRight, Check } from 'lucide-astro';
+import { Users, Headphones, Gift, Wrench, Globe, Plug, Check } from 'lucide-astro';
 
 const services = [
   {
-    icon: Zap,
-    title: 'Implementation',
-    description: 'Full Salesforce org setup from scratch — configured to your actual business process, not a generic template.',
-    outcomes: ['Go-live in weeks, not months', 'Clean data model from day one', 'Team trained and confident'],
+    icon: Users,
+    title: 'Sales Cloud',
+    description: 'End-to-end Sales Cloud implementations — lead management, opportunity tracking, forecasting, and automation built around how your sales team actually works.',
+    outcomes: ['Custom sales process & stages', 'Pipeline visibility from day one', 'Automated follow-ups & alerts'],
+  },
+  {
+    icon: Headphones,
+    title: 'Service Cloud',
+    description: 'Case management, routing, escalation rules, and knowledge bases that turn your support team into a well-oiled machine.',
+    outcomes: ['Omni-channel case routing', 'SLA tracking & escalations', 'Self-service knowledge base'],
+  },
+  {
+    icon: Gift,
+    title: 'Loyalty Cloud',
+    description: 'Salesforce Loyalty Management implementations — points, tiers, promotions, and member journeys that keep customers coming back.',
+    outcomes: ['Points & tier configuration', 'Promotion & voucher setup', 'Member portal integration'],
   },
   {
     icon: Wrench,
-    title: 'Customization',
-    description: 'Flows, custom objects, validation rules, and Apex — built so your Salesforce works exactly the way your team does.',
-    outcomes: ['Automate repetitive tasks', 'Eliminate manual data entry', 'Tailored to your workflow'],
+    title: 'Field Service Lightning',
+    description: 'Mobile workforce management — scheduling, dispatching, work orders, and asset tracking for teams that work in the field.',
+    outcomes: ['Work order & job management', 'Dispatcher console setup', 'Mobile offline capabilities'],
   },
   {
-    icon: Shield,
-    title: 'Admin Support',
-    description: 'Ongoing Salesforce administration without the cost of a full-time hire. I keep your org healthy and your team unblocked.',
-    outcomes: ['User management & permissions', 'Reports and dashboards', 'Troubleshooting & fixes'],
+    icon: Globe,
+    title: 'Experience Cloud',
+    description: 'Customer and partner portals, self-service sites, and community hubs — built on Experience Cloud and connected to your Salesforce data.',
+    outcomes: ['Customer & partner portals', 'Self-service case deflection', 'Branded site configuration'],
   },
   {
-    icon: BookOpen,
-    title: 'Training',
-    description: 'Hands-on training sessions that actually land. Your team learns by doing — in your own org, with your own data.',
-    outcomes: ['Role-based training paths', 'Custom documentation', 'Higher adoption rates'],
-  },
-  {
-    icon: ArrowLeftRight,
-    title: 'Migrations',
-    description: 'Moving from another CRM or a messy legacy org? I handle the data mapping, deduplication, and cutover — safely.',
-    outcomes: ['Data integrity guaranteed', 'Zero downtime cutover', 'Historical data preserved'],
+    icon: Plug,
+    title: 'Integrations',
+    description: 'Connecting Salesforce to the rest of your tech stack — ERPs, marketing platforms, payment systems, and custom APIs via REST, SOAP, or middleware.',
+    outcomes: ['REST & SOAP API integrations', 'Middleware & ETL setup', 'Real-time & batch sync'],
   },
 ];
 ---
