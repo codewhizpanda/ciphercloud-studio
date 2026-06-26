@@ -1,0 +1,77 @@
+---
+import { Handshake, Cloud, Code2, Workflow } from 'lucide-astro';
+
+const looking = [
+  {
+    icon: Cloud,
+    title: 'Salesforce Functional Consultants',
+    description: 'Sales Cloud, Service Cloud, Experience Cloud, or Loyalty — if you can run a discovery session and own a workstream, we want to talk.',
+  },
+  {
+    icon: Code2,
+    title: 'Salesforce Developers',
+    description: 'Apex, LWC, integrations, and automation. Especially strong in FSL, integrations, or complex Flow builds.',
+  },
+  {
+    icon: Workflow,
+    title: 'Flow & Automation Specialists',
+    description: 'If you live in Flow Builder and can turn a business process into clean declarative automation, you\'ll fit right in.',
+  },
+];
+---
+
+<section id="join" class="section-padding border-t border-neutral-800/50">
+  <div class="container-max">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div class="reveal-left">
+        <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Join the team</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Work with us.<br />
+          <span class="text-slate-400">On your terms.</span>
+        </h2>
+        <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
+          <p>
+            CipherCloud Studio is growing — and when projects come in, we bring in the right people,
+            not a bench of generalists. We work with independent Salesforce consultants on a
+            project-by-project basis.
+          </p>
+          <p>
+            No retainers, no office politics. Just good work, fair rates, and the kind of projects
+            worth putting on your portfolio.
+          </p>
+        </div>
+
+        <a
+          href="mailto:hello@ciphercloudstudio.com?subject=Consulting collaboration"
+          class="inline-flex items-center gap-2 mt-8 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-600/25"
+        >
+          <Handshake size={18} />
+          Get in touch
+        </a>
+      </div>
+
+      <div class="reveal space-y-4" style="transition-delay:150ms">
+        {looking.map(role => (
+          <div class="flex gap-4 bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300 group">
+            <div class="w-10 h-10 bg-brand-900/50 border border-brand-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-900 group-hover:border-brand-500/40 transition-all">
+              <role.icon size={20} class="text-brand-400" />
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-1 group-hover:text-brand-400 transition-colors">{role.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{role.description}</p>
+            </div>
+          </div>
+        ))}
+
+        <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 mt-2">
+          <p class="text-slate-400 text-sm leading-relaxed">
+            We work <span class="text-white font-medium">project-based</span> — no full-time commitment required.
+            Certifications help, but <span class="text-white font-medium">hands-on delivery experience</span> matters more.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
